@@ -9,7 +9,7 @@ on the proxy host — using nothing but their own login session.
 
 | | |
 |---|---|
-| Advisory | GHSA-7hp6-4w63-5g45 |
+| Advisory | [GHSA-7hp6-4w63-5g45](https://github.com/BerriAI/litellm/security/advisories/GHSA-7hp6-4w63-5g45) (BerriAI/litellm) |
 | Severity | **Critical, CVSS 9.9** (`AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H`) |
 | Class | CWE-269 (Improper Privilege Mgmt) · CWE-345 (Insufficient Verification of Data Authenticity) · CWE-441 (Confused Deputy) |
 | Affected | `>=1.91.0,<1.100.4`, `>=1.101.0,<1.101.3`, `>=1.102.0,<1.102.2`, `>=1.103.0,<1.103.1`, `1.104.0rc1` |
@@ -205,3 +205,12 @@ decrypt-the-bearer path (at the cost of the UI SSO / CLI gateway login flow).
 - The reverse-shell payload double-forks + `setsid` + `pty.spawn(bash -i)` so the shell detaches
   (reparented to PID 1) and survives LiteLLM reaping the managed MCP subprocess. It dials back to
   `host.docker.internal:<port>` (the container → your host).
+
+---
+
+## References
+
+- Original advisory: **GHSA-7hp6-4w63-5g45** — <https://github.com/BerriAI/litellm/security/advisories/GHSA-7hp6-4w63-5g45>
+- Upstream project: <https://github.com/BerriAI/litellm>
+- Fixed in: 1.100.4 / 1.101.3 / 1.102.2 / 1.103.1 / 1.104.0rc2
+- Credit: Hoa X. Nguyen (OPSWAT Unit 515)
