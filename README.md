@@ -14,6 +14,7 @@ local Docker environment.
 | [GHSA-7hp6-4w63-5g45](GHSA-7hp6-4w63-5g45/) | LiteLLM — cross-domain reuse of the salt key | `internal_user` → `proxy_admin` → RCE (CVSS 9.9) | [GHSA-7hp6-4w63-5g45](https://github.com/BerriAI/litellm/security/advisories/GHSA-7hp6-4w63-5g45) |
 | [CVE-2026-108097](CVE-2026-108097/) | Drupal core Field UI — render-array `#region_callback` injection | Unauthenticated RCE (CVSS 9.8) | [SA-CORE-2026-014](https://www.drupal.org/sa-core-2026-014) |
 | [CVE-2026-109618-109619](CVE-2026-109618-109619/) | PHP core "PHP2Shell" — four bailout/state-corruption bugs under two CVEs (CVSS 9.2), fixed in 8.4.27 | RCE demonstrated upstream on WordPress/Drupal/Joomla; this lab reproduces a worker-pool DoS variant; includes [WAF rules](CVE-2026-109618-109619/WAF-RULES.md) for Cloudflare, AWS, ModSecurity, Nginx | [php.net security release](https://www.php.net/archive/2026.php) |
+| [CVE-2026-110264](CVE-2026-110264/) | GitLab CE/EE — Onigmo regex-compiler integer overflow (Ruby 3.4.11, pre-fix) | Unauthenticated RCE (CVSS 10.0); lab reproduces the compile blow-up (worker OOM) and the upstream fix's effect | [GitLab patch release](https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/) |
 
 Each lab folder has its own `README.md` with the full write-up (why it's a vulnerability +
 step-by-step reproduction) and an automated `setup.sh` to stand up the vulnerable version.
